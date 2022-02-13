@@ -1,0 +1,8 @@
+Building DAG of jobs...
+InputFunctionException in line 69 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/checkpoint1:
+Error:
+  AttributeError: 'Wildcards' object has no attribute 'sample'
+Wildcards:
+
+Traceback:
+  File "/mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/checkpoint1", line 61, in aggregate_input

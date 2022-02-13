@@ -1,0 +1,3 @@
+NameError in line 15 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/checkpoint1:
+name 'rule' is not defined
+  File "/mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/checkpoint1", line 15, in <module>

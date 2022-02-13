@@ -1,0 +1,400 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count    min threads    max threads
+---------  -------  -------------  -------------
+aggregate        8              1              1
+all              1              1              1
+somestep         8              1              1
+total           17              1              1
+
+Select jobs to execute...
+
+[Sun Feb 13 03:08:36 2022]
+checkpoint somestep:
+    input: samples/d.txt
+    output: somestep/d.txt
+    jobid: 16
+    wildcards: sample=d
+    resources: tmpdir=/tmp
+Downstream jobs will be updated after completion.
+
+
+        # echo d > somestep/d.txt" # equivalent below
+        echo d > somestep/d.txt
+        
+[Sun Feb 13 03:08:36 2022]
+Finished job 16.
+1 of 17 steps (6%) done
+Updating job aggregate.
+Select jobs to execute...
+
+[Sun Feb 13 03:08:36 2022]
+rule alt_intermediate:
+    input: somestep/d.txt
+    output: alt/d.txt
+    jobid: 18
+    wildcards: sample=d
+    resources: tmpdir=/tmp
+
+touch alt/d.txt
+[Sun Feb 13 03:08:36 2022]
+Finished job 18.
+2 of 18 steps (11%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:36 2022]
+checkpoint somestep:
+    input: samples/p.txt
+    output: somestep/p.txt
+    jobid: 14
+    wildcards: sample=p
+    resources: tmpdir=/tmp
+Downstream jobs will be updated after completion.
+
+
+        # echo p > somestep/p.txt" # equivalent below
+        echo p > somestep/p.txt
+        
+[Sun Feb 13 03:08:36 2022]
+Finished job 14.
+3 of 18 steps (17%) done
+Updating job aggregate.
+Select jobs to execute...
+
+[Sun Feb 13 03:08:36 2022]
+checkpoint somestep:
+    input: samples/y.txt
+    output: somestep/y.txt
+    jobid: 12
+    wildcards: sample=y
+    resources: tmpdir=/tmp
+Downstream jobs will be updated after completion.
+
+
+        # echo y > somestep/y.txt" # equivalent below
+        echo y > somestep/y.txt
+        
+[Sun Feb 13 03:08:36 2022]
+Finished job 12.
+4 of 19 steps (21%) done
+Updating job aggregate.
+Select jobs to execute...
+
+[Sun Feb 13 03:08:36 2022]
+rule alt_intermediate:
+    input: somestep/y.txt
+    output: alt/y.txt
+    jobid: 22
+    wildcards: sample=y
+    resources: tmpdir=/tmp
+
+touch alt/y.txt
+[Sun Feb 13 03:08:36 2022]
+Finished job 22.
+5 of 20 steps (25%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:36 2022]
+checkpoint somestep:
+    input: samples/g.txt
+    output: somestep/g.txt
+    jobid: 10
+    wildcards: sample=g
+    resources: tmpdir=/tmp
+Downstream jobs will be updated after completion.
+
+
+        # echo g > somestep/g.txt" # equivalent below
+        echo g > somestep/g.txt
+        
+[Sun Feb 13 03:08:36 2022]
+Finished job 10.
+6 of 20 steps (30%) done
+Updating job aggregate.
+Select jobs to execute...
+
+[Sun Feb 13 03:08:36 2022]
+checkpoint somestep:
+    input: samples/5.txt
+    output: somestep/5.txt
+    jobid: 8
+    wildcards: sample=5
+    resources: tmpdir=/tmp
+Downstream jobs will be updated after completion.
+
+
+        # echo 5 > somestep/5.txt" # equivalent below
+        echo 5 > somestep/5.txt
+        
+[Sun Feb 13 03:08:37 2022]
+Finished job 8.
+7 of 21 steps (33%) done
+Updating job aggregate.
+Select jobs to execute...
+
+[Sun Feb 13 03:08:37 2022]
+checkpoint somestep:
+    input: samples/3.txt
+    output: somestep/3.txt
+    jobid: 6
+    wildcards: sample=3
+    resources: tmpdir=/tmp
+Downstream jobs will be updated after completion.
+
+
+        # echo 3 > somestep/3.txt" # equivalent below
+        echo 3 > somestep/3.txt
+        
+[Sun Feb 13 03:08:37 2022]
+Finished job 6.
+8 of 22 steps (36%) done
+Updating job aggregate.
+Select jobs to execute...
+
+[Sun Feb 13 03:08:37 2022]
+checkpoint somestep:
+    input: samples/2.txt
+    output: somestep/2.txt
+    jobid: 4
+    wildcards: sample=2
+    resources: tmpdir=/tmp
+Downstream jobs will be updated after completion.
+
+
+        # echo 2 > somestep/2.txt" # equivalent below
+        echo 2 > somestep/2.txt
+        
+[Sun Feb 13 03:08:37 2022]
+Finished job 4.
+9 of 23 steps (39%) done
+Updating job aggregate.
+Select jobs to execute...
+
+[Sun Feb 13 03:08:37 2022]
+rule alt_intermediate:
+    input: somestep/2.txt
+    output: alt/2.txt
+    jobid: 30
+    wildcards: sample=2
+    resources: tmpdir=/tmp
+
+touch alt/2.txt
+[Sun Feb 13 03:08:37 2022]
+Finished job 30.
+10 of 24 steps (42%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:37 2022]
+rule aggregate:
+    input: alt/2.txt
+    output: aggregated/2.txt
+    jobid: 3
+    wildcards: sample=2
+    resources: tmpdir=/tmp
+
+touch aggregated/2.txt
+[Sun Feb 13 03:08:37 2022]
+Finished job 3.
+11 of 24 steps (46%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:37 2022]
+rule alt_intermediate:
+    input: somestep/3.txt
+    output: alt/3.txt
+    jobid: 28
+    wildcards: sample=3
+    resources: tmpdir=/tmp
+
+touch alt/3.txt
+[Sun Feb 13 03:08:37 2022]
+Finished job 28.
+12 of 24 steps (50%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:37 2022]
+rule aggregate:
+    input: alt/3.txt
+    output: aggregated/3.txt
+    jobid: 5
+    wildcards: sample=3
+    resources: tmpdir=/tmp
+
+touch aggregated/3.txt
+[Sun Feb 13 03:08:37 2022]
+Finished job 5.
+13 of 24 steps (54%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:37 2022]
+rule alt_intermediate:
+    input: somestep/5.txt
+    output: alt/5.txt
+    jobid: 26
+    wildcards: sample=5
+    resources: tmpdir=/tmp
+
+touch alt/5.txt
+[Sun Feb 13 03:08:37 2022]
+Finished job 26.
+14 of 24 steps (58%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:37 2022]
+rule aggregate:
+    input: alt/5.txt
+    output: aggregated/5.txt
+    jobid: 7
+    wildcards: sample=5
+    resources: tmpdir=/tmp
+
+touch aggregated/5.txt
+[Sun Feb 13 03:08:37 2022]
+Finished job 7.
+15 of 24 steps (62%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:37 2022]
+checkpoint somestep:
+    input: samples/a.txt
+    output: somestep/a.txt
+    jobid: 2
+    wildcards: sample=a
+    resources: tmpdir=/tmp
+Downstream jobs will be updated after completion.
+
+
+        # echo a > somestep/a.txt" # equivalent below
+        echo a > somestep/a.txt
+        
+[Sun Feb 13 03:08:37 2022]
+Finished job 2.
+16 of 24 steps (67%) done
+Updating job aggregate.
+Select jobs to execute...
+
+[Sun Feb 13 03:08:38 2022]
+rule intermediate:
+    input: somestep/a.txt
+    output: post/a.txt
+    jobid: 32
+    wildcards: sample=a
+    resources: tmpdir=/tmp
+
+touch post/a.txt
+[Sun Feb 13 03:08:38 2022]
+Finished job 32.
+17 of 25 steps (68%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:38 2022]
+rule aggregate:
+    input: post/a.txt
+    output: aggregated/a.txt
+    jobid: 1
+    wildcards: sample=a
+    resources: tmpdir=/tmp
+
+touch aggregated/a.txt
+[Sun Feb 13 03:08:38 2022]
+Finished job 1.
+18 of 25 steps (72%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:38 2022]
+rule alt_intermediate:
+    input: somestep/p.txt
+    output: alt/p.txt
+    jobid: 20
+    wildcards: sample=p
+    resources: tmpdir=/tmp
+
+touch alt/p.txt
+[Sun Feb 13 03:08:38 2022]
+Finished job 20.
+19 of 25 steps (76%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:38 2022]
+rule aggregate:
+    input: alt/p.txt
+    output: aggregated/p.txt
+    jobid: 13
+    wildcards: sample=p
+    resources: tmpdir=/tmp
+
+touch aggregated/p.txt
+[Sun Feb 13 03:08:38 2022]
+Finished job 13.
+20 of 25 steps (80%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:38 2022]
+rule aggregate:
+    input: alt/d.txt
+    output: aggregated/d.txt
+    jobid: 15
+    wildcards: sample=d
+    resources: tmpdir=/tmp
+
+touch aggregated/d.txt
+[Sun Feb 13 03:08:38 2022]
+Finished job 15.
+21 of 25 steps (84%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:38 2022]
+rule aggregate:
+    input: alt/y.txt
+    output: aggregated/y.txt
+    jobid: 11
+    wildcards: sample=y
+    resources: tmpdir=/tmp
+
+touch aggregated/y.txt
+[Sun Feb 13 03:08:38 2022]
+Finished job 11.
+22 of 25 steps (88%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:38 2022]
+rule alt_intermediate:
+    input: somestep/g.txt
+    output: alt/g.txt
+    jobid: 24
+    wildcards: sample=g
+    resources: tmpdir=/tmp
+
+touch alt/g.txt
+[Sun Feb 13 03:08:38 2022]
+Finished job 24.
+23 of 25 steps (92%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:38 2022]
+rule aggregate:
+    input: alt/g.txt
+    output: aggregated/g.txt
+    jobid: 9
+    wildcards: sample=g
+    resources: tmpdir=/tmp
+
+touch aggregated/g.txt
+[Sun Feb 13 03:08:38 2022]
+Finished job 9.
+24 of 25 steps (96%) done
+Select jobs to execute...
+
+[Sun Feb 13 03:08:38 2022]
+localrule all:
+    input: aggregated/a.txt, aggregated/2.txt, aggregated/3.txt, aggregated/5.txt, aggregated/g.txt, aggregated/y.txt, aggregated/p.txt, aggregated/d.txt
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Sun Feb 13 03:08:38 2022]
+Finished job 0.
+25 of 25 steps (100%) done
+Complete log: /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/.snakemake/log/2022-02-13T030836.015690.snakemake.log

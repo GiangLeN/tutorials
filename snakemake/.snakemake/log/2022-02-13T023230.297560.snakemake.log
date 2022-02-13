@@ -1,0 +1,3 @@
+NameError in line 16 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/checkpoint1:
+name 'create_files' is not defined
+  File "/mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/checkpoint1", line 16, in <module>

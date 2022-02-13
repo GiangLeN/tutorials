@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count    min threads    max threads
+---------  -------  -------------  -------------
+aggregate        3              1              1
+all              1              1              1
+somestep         1              1              1
+total            5              1              1
+
+Select jobs to execute...
+
+[Sun Feb 13 03:02:53 2022]
+checkpoint somestep:
+    output: samples
+    jobid: 2
+    resources: tmpdir=/tmp
+Downstream jobs will be updated after completion.
+
+RuleException in line 11 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/checkpoint1:
+'Wildcards' object has no attribute 'sample'

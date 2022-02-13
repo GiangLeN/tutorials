@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 20 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/checkpoint1:
+Missing input files for rule somestep:
+samples/a.txt

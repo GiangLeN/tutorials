@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in line 2 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/checkpoint1:
+Wildcards in input files cannot be determined from output files:
+'sample'

@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count    min threads    max threads
+------------  -------  -------------  -------------
+aggregate           5              1              1
+all                 1              1              1
+create_files        1              1              1
+somestep            5              1              1
+total              12              1              1
+
+Select jobs to execute...
+
+[Sun Feb 13 02:47:44 2022]
+rule create_files:
+    output: start.txt
+    jobid: 3
+    resources: tmpdir=/tmp
+
+RuleException in line 6 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/checkpoint1:
+NameError: The name 'a,b,d,f,g' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}

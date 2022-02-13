@@ -1,3 +1,11 @@
+# Snakemake
+
+This is a collection of snakemake files with examples.
+
+
+
+
+
 # Checkpoint in Snakemake
 
 

@@ -1,0 +1,3 @@
+NameError in line 9 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/checkpoint1:
+name 'a' is not defined
+  File "/mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/checkpoint1", line 9, in <module>
