@@ -22,3 +22,7 @@ https://www.frontiersin.org/articles/10.3389/fmicb.2019.02407/full
 https://forum.biobakery.org/t/rarefy-metagenome-sequence-data-before-metaphlan3-analysis/690
 https://groups.google.com/g/metaphlan-users/c/e2tets6NHK8
 http://seqanswers.com/forums/showthread.php?t=25715
+
+https://stackoverflow.com/questions/69044425/snakemake-ignore-failed-path-and-redefine-inputs-for-a-common-rule
+https://stackoverflow.com/questions/45613881/what-would-be-an-elegant-way-of-preventing-snakemake-from-failing-upon-shell-r-e
+https://ifb-elixirfr.github.io/IFB-FAIR-bioinfo-training/assets/pdf/Session2020/session_03/03_workflow.pdf
