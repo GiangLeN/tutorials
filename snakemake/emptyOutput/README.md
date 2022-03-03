@@ -5,6 +5,8 @@ Add condition to check if the output is empty or not.
 
 Bash commands:
 
+`bash coinflip.sh && [[ -s out.txt ]] && echo "result generated" || echo "empty file"`
+
 `&` Run in the background  
 `&&` Only run when first command is successfully executed.  
 `||` Logical  
