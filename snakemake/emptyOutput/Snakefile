@@ -1,0 +1,12 @@
+rule:
+    input:
+        "test.txt"
+    output:
+        "out.txt"
+    shell:
+        """
+        # Execute condition to check if out.txt is empty after program is done
+        # If yes return text, else return other text
+        # could use other commands instead
+        bash coinflip.sh && [[ -s out.txt ]] && echo "result generated" || echo "empty file"
+        """
