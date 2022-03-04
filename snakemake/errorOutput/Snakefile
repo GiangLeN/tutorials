@@ -1,0 +1,9 @@
+rule:
+    input:
+        "test.txt"
+    output:
+        "outAnyway.txt"
+    shell:
+        """
+        bash error.sh || touch {output} 
+        """
