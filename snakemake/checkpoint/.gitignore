@@ -1,0 +1,6 @@
+
+#Ignore text
+*.txt
+test/*
+.snakemake/*
+*.swp

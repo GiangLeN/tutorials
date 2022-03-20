@@ -1,0 +1,43 @@
+rule all:
+    input:
+        "final.txt"
+
+rule first:
+    output:
+        touch("text.txt")
+
+checkpoint randomFiles:
+    input:
+        rules.first.output[0]
+    output:
+        newDir=directory("newContent")
+    shell:
+        """
+        mkdir {output}
+        randomNumbers=$(seq 1 15 | shuf -n 1)
+        for i in $(seq 1 $randomNumbers)
+        do
+            echo $i > {output}/$RANDOM.txt
+        done
+        """
+
+rule intermediate:
+    input:
+        "newContent/{i}.txt"
+    output:
+        "process/{i}.txt"
+    shell:
+        "cp {input} {output}"
+
+def aggregate_input(wildcards):
+    checkpoint_output = checkpoints.randomFiles.get(**wildcards).output[0]
+    return expand("process/{i}.txt",
+           i=glob_wildcards(os.path.join(checkpoint_output, "{i}.txt")).i)
+
+rule aggregate:
+    input:
+        aggregate_input
+    output:
+        "final.txt"
+    shell:
+        "cat {input} > {output}"

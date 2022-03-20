@@ -1,0 +1,86 @@
+# By Giang Le
+# 06/March/2022
+
+
+rule all:
+    input:
+        "created.txt"
+
+
+rule first:
+    output:
+        touch("text.txt")
+
+rule create:
+    input:
+        rule.first.output[0]
+    output:
+        "created.txt"
+    shell:
+        """
+        echo {input} {output}
+        """
+
+#     expand("aggregated/{sample}.txt", sample = "a 2 3 5 g y p d".split())
+
+# Checkpoint re-evaluate of the DAG
+# In this case check for the number of files in the somestep folder
+# Can be used for "unknown" number of samples files
+checkpoint somestep:
+    input:
+        "samples/{sample}.txt"
+    output:
+        "somestep/{sample}.txt"
+    shell:
+        # simulate some output value
+        """
+        # echo {wildcards.sample} > somestep/{wildcards.sample}.txt" # equivalent below
+        echo {wildcards.sample} > {output}
+        """
+
+# different rules to process file depending on aggregate_input
+
+# intermediate rule
+rule intermediate:
+    input:
+        "somestep/{sample}.txt"
+    output:
+        "post/{sample}.txt"
+    shell:
+        "touch {output}"
+
+
+# alternative intermediate rule
+rule alt_intermediate:
+    input:
+        "somestep/{sample}.txt"
+    output:
+        "alt/{sample}.txt"
+    shell:
+        "touch {output}"
+
+
+# input function for the rule aggregate
+def aggregate_input(wildcards):
+    # decision based on content of output file
+    # Open the file choose return depending if a is in the file 
+    
+    # Important: use the method open() of the returned file!
+    # This way, Snakemake is able to automatically download the file if it is generated in
+    # a cloud environment without a shared filesystem.
+    
+    with checkpoints.somestep.get(sample=wildcards.sample).output[0].open() as f:
+        if f.read().strip() == "a":
+            return "post/{sample}.txt"
+        else:
+            return "alt/{sample}.txt"
+
+# Here the input could come from either post of alt folder
+# This triggers the corresponding rule accordingly 
+rule aggregate:
+    input:
+        aggregate_input
+    output:
+        "aggregated/{sample}.txt"
+    shell:
+        "touch {output}"
