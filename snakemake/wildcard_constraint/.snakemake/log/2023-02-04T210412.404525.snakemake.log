@@ -1,3 +1,0 @@
-AttributeError in line 3 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/wildcard_constraint/Snakefile:
-'dict_values' object has no attribute 'tolist'
-  File "/mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/wildcard_constraint/Snakefile", line 3, in <module>

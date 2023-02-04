@@ -1,2 +1,0 @@
-SyntaxError in line 23 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/wildcard_constraint/Snakefile:
-No rule keywords allowed after run/shell/script/wrapper/cwl in rule check. (Snakefile, line 23)

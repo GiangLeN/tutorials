@@ -1,3 +1,0 @@
-WildcardError in line 7 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/wildcard_constraint/Snakefile:
-No values given for wildcard 'files'.
-  File "/mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/wildcard_constraint/Snakefile", line 7, in <module>
