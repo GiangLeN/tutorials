@@ -1,0 +1,22 @@
+FILENAME = {'one':"aba.txt", "two":"bcb.txt", "three":"cdc.txt"}
+
+
+for file in FILENAME.values():
+    with open(file, 'a'):
+        os.utime(file, None)
+
+rule all:
+    input:
+        expand("{number}.txt", number = FILENAME.keys())
+
+rule check:
+    input:
+        lambda wildcards: FILENAME[wildcards.number]
+    output:
+        "{number}.txt"
+    wildcard_constraints:
+        number="|".join(FILENAME.keys())
+    shell:
+        """
+        echo {input}
+        """
