@@ -1,0 +1,24 @@
+import os
+
+FILENAME = {'one':"aba.txt", "two":"bcb.txt", "three":"cdc.txt"}
+
+# create blank files
+for file in FILENAME.values():
+    with open(file, 'a'):
+        os.utime(file, None)
+
+rule all:
+    input:
+        expand("{number}.txt", number = FILENAME.keys())
+
+rule check:
+    input:
+        lambda wildcards: FILENAME[wildcards.number]
+    wildcard_constraints:
+        number="|".join(FILENAME.keys())
+    output:
+        "{number}.txt"
+    shell:
+        """
+        echo {input} > {output}
+        """

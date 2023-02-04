@@ -1,0 +1,22 @@
+Building DAG of jobs...
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+create        1              1              1
+total         2              1              1
+
+
+[Sat Feb  4 21:00:34 2023]
+rule create:
+    output: files.txt
+    jobid: 1
+    resources: tmpdir=/tmp
+
+InputFunctionException in line 8 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/wildcard_constraint/Snakefile:
+Error:
+  AttributeError: 'Wildcards' object has no attribute 'number'
+Wildcards:
+
+Traceback:
+  File "/mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/wildcard_constraint/Snakefile", line 10, in <lambda>

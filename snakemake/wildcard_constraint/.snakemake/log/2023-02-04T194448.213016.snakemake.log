@@ -1,0 +1,3 @@
+Building DAG of jobs...
+IOFileException in line 7 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/wildcard_constraint/Snakefile:
+multiple repeat at position 17 in wildcard statement

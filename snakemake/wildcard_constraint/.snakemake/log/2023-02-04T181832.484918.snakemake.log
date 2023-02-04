@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 7 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/wildcard_constraint/Snakefile:
+Missing input files for rule check:
+aba.txt

@@ -1,0 +1,8 @@
+Building DAG of jobs...
+InputFunctionException in line 9 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/wildcard_constraint/Snakefile:
+Error:
+  KeyError: 'aba'
+Wildcards:
+  number=aba
+Traceback:
+  File "/mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/wildcard_constraint/Snakefile", line 11, in <lambda>

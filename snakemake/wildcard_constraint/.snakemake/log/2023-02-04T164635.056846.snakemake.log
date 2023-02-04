@@ -1,0 +1,3 @@
+NameError in line 20 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/wildcard_constraint/Snakefile:
+name 'a' is not defined
+  File "/mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/wildcard_constraint/Snakefile", line 20, in <module>

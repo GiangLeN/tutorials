@@ -1,0 +1,2 @@
+SyntaxError in line 11 of /mnt/c/Users/giang/Documents/Work/tutorialsToKnow/snakemake/wildcard_constraint/Snakefile:
+Unexpected keyword for in rule definition (Snakefile, line 11)
