@@ -1,0 +1,41 @@
+configfile:"config.yaml"
+
+(PLAQUES,SAMPLES,IDS,RUNS,LANES,PAIRED,) = glob_wildcards(config["dataDirInput"]+"{plaque}/{sample}/{id}_run{run}_L{lane}_R{paire}_001.fastq.gz")
+
+
+rule all:
+  input:
+    expand(config["dataDirOutput"]+"{plaque}/{sample}/{id}_run{run}_L{lane}_mapped.bam", zip, plaque = PLAQUES, sample = SAMPLES, id = IDS, run = RUNS, lane = LANES),
+
+
+rule trimmomatic:
+  input: 
+    read1=config["dataDirInput"]+"{plaque}/{sample}/{id}_run{run}_L{lane}_R1_001.fastq.gz",
+    read2=config["dataDirInput"]+"{plaque}/{sample}/{id}_run{run}_L{lane}_R2_001.fastq.gz"
+  output:
+    read1_paired=config["dataDirOutput"]+"{plaque}/{sample}/{id}_run{run}_L{lane}_R1_001_paired.fastq.gz",
+    read2_paired=config["dataDirOutput"]+"{plaque}/{sample}/{id}_run{run}_L{lane}_R2_001_paired.fastq.gz",
+  shell:
+    """
+    echo {input.read1} > {output.read1_paired}
+    echo {input.read2} > {output.read2_paired}
+    """
+
+rule mapping:
+  input:
+    read1_paired=config["dataDirOutput"]+"{plaque}/{sample}/{id}_run{run}_L{lane}_R1_001_paired.fastq.gz",
+    read2_paired=config["dataDirOutput"]+"{plaque}/{sample}/{id}_run{run}_L{lane}_R2_001_paired.fastq.gz",
+  output:
+    config["dataDirOutput"]+"{plaque}/{sample}/{id}_run{run}_L{lane}_mapped.bam"
+  shell:
+    """
+    cat {input} > {output}
+    """
+
+
+(PLAQUES,SAMPLES,IDS,LANES,) = glob_wildcards(config["dataDirOutput"]+"{plaque}/{sample}/{id}_L{lane}_mapped.bam")
+
+print (PLAQUES)
+print (SAMPLES)
+print (IDS)
+print (LANES)
