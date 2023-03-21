@@ -33,9 +33,21 @@ rule mapping:
     """
 
 
-(PLAQUES,SAMPLES,IDS,LANES,) = glob_wildcards(config["dataDirOutput"]+"{plaque}/{sample}/{id}_L{lane}_mapped.bam")
+#(DIRS,IDS,LANES,) = glob_wildcards(config["dataDirOutput"]+"{dirs}/{id}_L{lane}_mapped.bam")
+#(DIRS,IDS) = glob_wildcards(config["dataDirOutput"]+"{dirs}/{id}_mapped.bam")
+(IDS,LANES,) = glob_wildcards(config["dataDirOutput"]+"{id}_L{lane}_mapped.bam")
 
-print (PLAQUES)
-print (SAMPLES)
 print (IDS)
-print (LANES)
+
+
+rundict={}
+
+for file_path in set(IDS):
+  lanes, = glob_wildcards(config["dataDirOutput"] + file_path + "_L{lane}_mapped.bam")
+  rundict[config["dataDirOutput"] + file_path]=lanes
+
+#print (rundict)
+
+#print (DIRS)
+#print (IDS)
+#print (LANES)
