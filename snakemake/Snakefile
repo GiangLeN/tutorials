@@ -1,0 +1,30 @@
+LETTERS = ["A", "B", "C"]
+REGIONS = ["mhc", "kir"]
+
+'''
+In this case the letters appeared in repeat
+
+- Test with more variables
+'''
+
+rule all:
+    input:
+        expand("combined_{region}.txt", region = REGIONS)
+
+rule generate_text:
+    output:
+        "1234_{region}_{letter}.txt"
+    shell:
+        """
+        echo "test" > {output}
+        """
+
+rule combine text:
+    input:
+        expand("1234_{{region}}_{letter}.txt", letter = LETTERS)
+    output:
+        "combined_{region}.txt"
+    shell:
+        """
+        cat {input} > {output}
+        """
